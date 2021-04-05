@@ -10,13 +10,13 @@ The preferred way to install this extension is through [composer](http://getcomp
 Either run
 
 ```
-php composer.phar require --prefer-dist taguz91/yii2-common-rest "*"
+composer require --prefer-dist taguz91/yii2-common-rest
 ```
 
 or add
 
 ```
-"taguz91/yii2-common-rest": "*"
+"taguz91/yii2-common-rest": "^1.0.0"
 ```
 
 to the require section of your `composer.json` file.

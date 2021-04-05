@@ -2,6 +2,7 @@
 
 namespace taguz91\CommonRest\traits;
 
+use taguz91\CommonRest\OptionsCors;
 use yii\filters\AccessControl;
 use yii\filters\auth\CompositeAuth;
 use yii\filters\RateLimiter;
