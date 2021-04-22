@@ -35,7 +35,7 @@ class Controller extends WebController
     // Si no es un strign no validamos nada 
     if (!is_string($result)) return $result;
 
-    if ($data = json_decode($result) !== false) {
+    if (($data = json_decode($result)) !== false) {
       if (is_object($data)) return $data;
     }
 
