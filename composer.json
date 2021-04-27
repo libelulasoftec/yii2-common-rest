@@ -21,9 +21,20 @@
     "taguz91/yii2-common-helpers": "v1.0.3.1",
     "taguz91/yii2-error-handler": "^1.1"
   },
+  "config": {
+    "fxp-asset": {
+      "enabled": false
+    }
+  },
   "autoload": {
     "psr-4": {
       "taguz91\\CommonRest\\": "src"
     }
-  }
+  },
+  "repositories": [
+    {
+      "type": "composer",
+      "url": "https://asset-packagist.org"
+    }
+  ]
 }
