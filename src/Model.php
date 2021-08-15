@@ -91,6 +91,9 @@ class Model extends BaseModel
     return $model;
   }
 
+  /**
+   * Create a model recursive
+   */
   public static function instanceRecursive(
     array $data,
     array $recursive
