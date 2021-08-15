@@ -3,6 +3,7 @@
 namespace taguz91\CommonRest;
 
 use taguz91\CommonHelpers\RequestHelpers;
+use taguz91\CommonRest\exceptions\InvalidClassException;
 use taguz91\ErrorHandler\exceptions\DataInvalidException;
 use Yii;
 use yii\base\Model as BaseModel;
@@ -78,5 +79,46 @@ class Model extends BaseModel
       throw new DataInvalidException($errorMessage, $this);
     }
     return $this;
+  }
+
+  /**
+   * Create a model
+   */
+  public static function instanceModel(array $data)
+  {
+    $model = new static();
+    $model->load($data, '');
+    return $model;
+  }
+
+  public static function instanceRecursive(
+    array $data,
+    array $recursive
+  ) {
+    foreach ($recursive as $attribute => $class) {
+
+      if (is_array($class)) {
+        list($classPath, $recursiveChild) = $class;
+
+        $recursiveModel = new $classPath();
+        if (!$recursiveModel instanceof Model) {
+          throw new InvalidClassException("The class '{$classPath}' isn't recursive.");
+        }
+
+        $data[$attribute] = $recursiveModel::instanceRecursive(
+          $data[$attribute],
+          $recursiveChild
+        );
+      } elseif (is_string($class)) {
+        $recursiveModel = new $class();
+        if (!$recursiveModel instanceof Model) {
+          throw new InvalidClassException("The class '{$class}' isn't recursive.");
+        }
+
+        $data[$attribute] = $recursiveModel::instanceModel($data[$attribute]);
+      }
+    }
+
+    return self::instanceModel($data);
   }
 }

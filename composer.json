@@ -18,7 +18,7 @@
   "require": {
     "php": ">=7.0.0",
     "yiisoft/yii2": "~2.0.0",
-    "taguz91/yii2-common-helpers": "v2.0.0",
+    "taguz91/yii2-common-helpers": "^2.0.0",
     "taguz91/yii2-error-handler": "^2.0.0"
   },
   "config": {

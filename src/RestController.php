@@ -17,7 +17,6 @@ class RestController extends BaseController
    */
   public function beforeAction($action)
   {
-    date_default_timezone_set("America/Guayaquil");
     Yii::$app->response->format = Response::FORMAT_JSON;
     Yii::$app->response->headers->add('Content-Type', 'application/json');
     $this->enableCsrfValidation = false;
