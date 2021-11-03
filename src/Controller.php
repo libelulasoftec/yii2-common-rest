@@ -17,7 +17,6 @@ class Controller extends WebController
    */
   public function beforeAction($action)
   {
-    date_default_timezone_set("America/Guayaquil");
     Yii::$app->response->format = Response::FORMAT_JSON;
     Yii::$app->response->headers->add('Content-Type', 'application/json');
     $this->enableCsrfValidation = false;
@@ -30,13 +29,19 @@ class Controller extends WebController
   public function afterAction($action, $result)
   {
     $result = parent::afterAction($action, $result);
-    if (is_null($result)) Yii::$app->response->content = '';
+    if (is_null($result)) {
+      Yii::$app->response->content = '';
+    }
 
     // Si no es un strign no validamos nada 
-    if (!is_string($result)) return $result;
+    if (!is_string($result)) {
+      return $result;
+    }
 
     if (($data = json_decode($result)) !== false) {
-      if (is_object($data)) return $data;
+      if (is_object($data)) {
+        return $data;
+      }
     }
 
     // Si es un PDF lo mostramos ya no seteamos a json
