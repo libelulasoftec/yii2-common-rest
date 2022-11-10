@@ -44,7 +44,7 @@ composer remove taguz91/yii2-common-rest
 composer require libelulasoft/yii2-common-rest
 ```
 
-5. Se debe cambiar el namespace `taguz01\CommonRest` a `Libelulasoft\CommonRest` en todo el proyecto.
+5. Se debe cambiar el namespace `taguz91\CommonRest` a `Libelulasoft\CommonRest` en todo el proyecto.
 
 6. Probamos que todo funcione de forma correcta.
 
