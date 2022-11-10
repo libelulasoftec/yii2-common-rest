@@ -2,9 +2,9 @@
 
 namespace Libelulasoft\CommonRest;
 
-use taguz91\CommonHelpers\RequestHelpers;
-use taguz91\CommonRest\exceptions\InvalidClassException;
-use taguz91\ErrorHandler\exceptions\DataInvalidException;
+use Libelulasoft\CommonHelpers\RequestHelpers;
+use Libelulasoft\CommonRest\exceptions\InvalidClassException;
+use Libelulasoft\ErrorHandler\exceptions\DataInvalidException;
 use Yii;
 use yii\base\Model as BaseModel;
 

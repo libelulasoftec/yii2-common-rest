@@ -2,7 +2,7 @@
 
 namespace Libelulasoft\CommonRest;
 
-use taguz91\CommonRest\traits\ControllerBehavior;
+use Libelulasoft\CommonRest\traits\ControllerBehavior;
 use Yii;
 use yii\rest\Controller as BaseController;
 use yii\web\Response;
