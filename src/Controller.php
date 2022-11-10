@@ -10,6 +10,8 @@ use yii\web\Response;
 class Controller extends WebController
 {
 
+  const APPLICATION_JSON = 'application/json';
+
   use ControllerBehavior;
 
   /**
@@ -18,7 +20,7 @@ class Controller extends WebController
   public function beforeAction($action)
   {
     Yii::$app->response->format = Response::FORMAT_JSON;
-    Yii::$app->response->headers->add('Content-Type', 'application/json');
+    Yii::$app->response->headers->add('Content-Type', self::APPLICATION_JSON);
     $this->enableCsrfValidation = false;
     return parent::beforeAction($action);
   }
@@ -33,7 +35,7 @@ class Controller extends WebController
       Yii::$app->response->content = '';
     }
 
-    // Si no es un strign no validamos nada 
+    // Si no es un strign no validamos nada
     if (!is_string($result)) {
       return $result;
     }
@@ -50,7 +52,7 @@ class Controller extends WebController
     }
 
     Yii::$app->response->format = Response::FORMAT_HTML;
-    Yii::$app->response->headers->remove('Content-Type', 'application/json');
+    Yii::$app->response->headers->remove('Content-Type', self::APPLICATION_JSON);
     return $result;
   }
 
@@ -60,7 +62,7 @@ class Controller extends WebController
   public function render($view, $params = [])
   {
     Yii::$app->response->format = Response::FORMAT_HTML;
-    Yii::$app->response->headers->remove('Content-Type', 'application/json');
+    Yii::$app->response->headers->remove('Content-Type', self::APPLICATION_JSON);
     return parent::render($view, $params);
   }
 }
