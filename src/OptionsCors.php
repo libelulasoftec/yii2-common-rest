@@ -1,6 +1,6 @@
 <?php
 
-namespace taguz91\CommonRest;
+namespace Libelulasoft\CommonRest;
 
 use Yii;
 

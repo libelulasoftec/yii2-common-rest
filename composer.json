@@ -1,5 +1,5 @@
 {
-  "name": "taguz91/yii2-common-rest",
+  "name": "libelulasoft/yii2-common-rest",
   "description": "Common rest utilities",
   "type": "yii2-extension",
   "keywords": [
@@ -28,7 +28,7 @@
   },
   "autoload": {
     "psr-4": {
-      "taguz91\\CommonRest\\": "src"
+      "Libelulasoft\\CommonRest\\": "src"
     }
   },
   "repositories": [

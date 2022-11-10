@@ -1,6 +1,6 @@
 <?php
 
-namespace taguz91\CommonRest;
+namespace Libelulasoft\CommonRest;
 
 use taguz91\CommonHelpers\RequestHelpers;
 use taguz91\CommonRest\exceptions\InvalidClassException;

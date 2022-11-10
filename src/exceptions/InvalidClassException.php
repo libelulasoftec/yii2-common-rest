@@ -1,6 +1,6 @@
 <?php
 
-namespace taguz91\CommonRest\exceptions;
+namespace Libelulasoft\CommonRest\exceptions;
 
 use Exception;
 
